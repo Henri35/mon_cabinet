@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabinet Dufour Expertise</title>
+  <link rel="stylesheet" href="{% static 'vitrine/style.css' %}">
+</head>
+<body>
+  <header class="navbar">
+  <div class="logo">
+    <img src="{% static 'vitrine/images/logo8.png' %}" alt="Logo du cabinet" class="logo-img">
+
+    <span>Cabinet Dufour Expertise</span>
+  </div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="burger" id="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </header>
+
+  <section id="accueil" class="hero fade-in">
+    <div class="hero-content">
+      <h1>Votre partenaire de confiance en expertise comptable</h1>
+      <p>Accompagnement sur mesure pour Entrepreneurs, Sociétés, Associations et Fondations.</p>
+      <a href="#contact" class="btn">Contactez-nous</a>
+    </div>
+  </section>
+
+  <section id="services" class="services fade-in">
+    <h2>Nos services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Comptabilité</h3>
+        <p>Tenue comptable, bilans, comptes annuels et reporting financier, externalisation de la fonction administrative et comptable.</p>
+      </div>
+      <div class="card">
+        <h3>Fiscalité</h3>
+        <p>Déclarations fiscales, optimisation et accompagnement personnalisé.</p>
+      </div>
+      <div class="card">
+        <h3>Conseil</h3>
+        <p>Accompagnement stratégique à chaque étape de la vie de l’entreprise : création, développement, optimisation de la performance et gestion des risques.</p>
+      </div>
+      <div class="card">
+        <h3>Gestion de l'entreprise</h3>
+        <p>Appui concret au pilotage quotidien : suivi budgétaire, tableaux de bord, analyse des marges et aide à la décision.</p>
+      </div>
+      <div class="card">
+        <h3>Gestion social</h3>
+        <p>Etablissement des bulletins de paie et des déclarations sociales, Assistance à la gestion de personne</p>
+      </div>
+      <div class="card">
+        <h3>Audit & Contrôle</h3>
+        <p>Audit contractuel, revue des procédures internes et accompagnement à la mise en conformité réglementaire.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apropos" class="about fade-in">
+    <h2>À propos du cabinet</h2>
+    <p>
+      Créé par Fabien Dufour, expert-comptable et data scientist diplômé, le cabinet allie rigueur
+      comptable et maîtrise des données pour accompagner les professionnels dans leurs démarches 
+      comptables, fiscales et financières, avec une approche claire et pédagogique.
+    </p>
+  </section>
+
+<section id="temoignages" class="fade-in">
+  <h2>Ils nous font confiance</h2>
+
+  <div class="temoignages-container">
+    <div class="temoignages-track">
+      <div class="temoignage">
+        <p>“Un accompagnement clair et efficace. Je recommande !”</p>
+        <strong>– Marie L.</strong>
+      </div>
+      <div class="temoignage">
+        <p>“Réactivité et pédagogie, parfait pour les PME.”</p>
+        <strong>– Karim B.</strong>
+      </div>
+      <div class="temoignage">
+        <p>“Un vrai partenaire de confiance pour nos bilans annuels.”</p>
+        <strong>– Sophie D.</strong>
+      </div>
+      <div class="temoignage">
+        <p>“Analyse pertinente et conseils clairs, parfait pour piloter notre activité.”</p>
+        <strong>– Thomas R.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contact" class="contact fade-in">
+    <h2>Contactez-nous</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Votre nom" required />
+      <input type="email" id="email" placeholder="Votre email" required />
+      <textarea id="message" placeholder="Votre message" required></textarea>
+      <button type="submit" class="btn">Envoyer</button>
+    </form>
+
+    <p class="contact-info">📍 Bobigny · ✉️ fabien@dufour-expertise.fr · ☎️ 01 23 45 67 89</p>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.744228241544!2d2.4669!3d48.8928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e612bfbdbb73a1%3A0x40819a5fd97dc40!2sBobigny!5e0!3m2!1sfr!2sfr!4v1719671111111"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+<footer>
+  <div class="footer-content">
+    <img src="{% static 'vitrine/images/logo8.png' %}" alt="Logo du cabinet" class="logo-footer">
+    <p>© 2025 Cabinet Dufour Expertise — Tous droits réservés</p>
+  </div>
+</footer>
+
+
+  <div id="cookie-banner" class="cookie-banner">
+    <p>
+      Ce site utilise des cookies uniquement à des fins de fonctionnement.
+      <a href="{% url 'politique' %}">En savoir plus</a>
+    </p>
+    <div class="cookie-buttons">
+      <button id="acceptCookies" class="btn small">Accepter</button>
+      <button id="declineCookies" class="btn small decline">Refuser</button>
+    </div>
+  </div>
+
+
+
+
+  <script src="{% static 'vitrine/script.js' %}"></script>
+
+  <script id="analytics-script" type="text/plain" data-cookie-consent="analytics">
+    <!-- Script Google Analytics désactivé par défaut -->
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'G-XXXXXXXXXX', 'auto');  /* ← remplace par ton propre ID */
+    ga('send', 'pageview');
+  </script>
+
+
+  
+</body>
+</html>

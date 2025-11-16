@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabinet Dufour Expertise</title>
+  <link rel="stylesheet" href="{% static 'vitrine/style.css' %}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Cabinet Dufour Expertise</div>
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="burger" id="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </header>
+
+  <section id="accueil" class="hero fade-in">
+    <div class="hero-content">
+      <h1>Votre partenaire de confiance en expertise comptable</h1>
+      <p>Accompagnement sur mesure pour entrepreneurs, indépendants et sociétés.</p>
+      <a href="#contact" class="btn">Contactez-nous</a>
+    </div>
+  </section>
+
+  <section id="services" class="services fade-in">
+    <h2>Nos services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Comptabilité</h3>
+        <p>Tenue comptable, bilans, comptes annuels et reporting financier.</p>
+      </div>
+      <div class="card">
+        <h3>Fiscalité</h3>
+        <p>Déclarations fiscales, optimisation et accompagnement personnalisé.</p>
+      </div>
+      <div class="card">
+        <h3>Conseil</h3>
+        <p>Création d’entreprise, gestion, pilotage et accompagnement stratégique.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apropos" class="about fade-in">
+    <h2>À propos du cabinet</h2>
+    <p>
+      Fondé par Fabien Dufour, expert-comptable diplômé, le cabinet accompagne les professionnels
+      dans toutes leurs démarches comptables, fiscales et financières. Nous mettons la proximité,
+      la réactivité et la pédagogie au cœur de notre mission.
+    </p>
+  </section>
+
+  <section id="contact" class="contact fade-in">
+    <h2>Contactez-nous</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Votre nom" required />
+      <input type="email" id="email" placeholder="Votre email" required />
+      <textarea id="message" placeholder="Votre message" required></textarea>
+      <button type="submit" class="btn">Envoyer</button>
+    </form>
+
+    <p class="contact-info">📍 Noisy-le-Sec · ✉️ contact@cabinetdufour.fr · ☎️ 01 23 45 67 89</p>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.744228241544!2d2.4669!3d48.8928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e612bfbdbb73a1%3A0x40819a5fd97dc40!2sNoisy-le-Sec!5e0!3m2!1sfr!2sfr!4v1719671111111"
+        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Cabinet Dufour Expertise — Tous droits réservés</p>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <p>
+      Ce site utilise des cookies uniquement à des fins de fonctionnement.
+      <a href="#">En savoir plus</a>
+    </p>
+    <button id="acceptCookies" class="btn small">Accepter</button>
+  </div>
+
+  <script src="{% static 'vitrine/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("✅ Script chargé !");
+
+  // MENU BURGER
+  const burger = document.getElementById('burger');
+  const navMenu = document.querySelector('.navbar ul');
+  if (burger && navMenu) {
+    burger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    document.querySelectorAll('.navbar a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+
+  // SCROLL DOUX
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // FORMULAIRE
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) {
+        alert("Merci de remplir tous les champs.");
+        return;
+      }
+      alert("Merci pour votre message, nous vous répondrons rapidement !");
+      form.reset();
+    });
+  }
+
+  // ANIMATION AU DÉFILEMENT
+  const fades = document.querySelectorAll('.fade-in');
+  console.log("Sections repérées :", fades.length);
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fades.forEach(section => observer.observe(section));
+  } else {
+    // Si IntersectionObserver n'est pas dispo, on affiche tout directement
+    fades.forEach(el => el.classList.add('visible'));
+  }
+
+  // COOKIE BANNER
+  const cookieBanner = document.getElementById('cookie-banner');
+  const acceptBtn = document.getElementById('acceptCookies');
+  if (cookieBanner && acceptBtn) {
+    if (localStorage.getItem('cookiesAccepted')) {
+      cookieBanner.style.display = 'none';
+    }
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true');
+      cookieBanner.style.display = 'none';
+    });
+  }
+});
