@@ -1,1 +1,2 @@
-web: gunicorn monsite.wsgi
+web: gunicorn monsite.wsgi --bind 0.0.0.0:$PORT
+
