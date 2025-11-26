@@ -19,8 +19,12 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
+    # d’abord les routes spécifiques
+    path("sitemap.xml", TemplateView.as_view(template_name="sitemap.xml", content_type="application/xml")),
+    path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+
+    # ensuite ce qui attrape tout
     path('admin/', admin.site.urls), #fabien, Htbs171717!
     path('', include('vitrine.urls')),
-    path("sitemap.xml", TemplateView.as_view(template_name="sitemap.xml", content_type="application/xml")),
 ]
 
