@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
+Sitemap: https://dufour-expertise.com/sitemap.xml
 Sitemap: https://www.dufour-expertise.com/sitemap.xml
