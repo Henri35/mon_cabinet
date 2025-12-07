@@ -15,14 +15,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth' // Active l'animation douce
+                // HAUTEUR DE LA NAVBAR À DÉCALER
+                // Utiliser la valeur maximale de la navbar (env. 160px) + marge de sécurité (10px)
+                const navbarHeight = 170; 
+                
+                // 1. Calculer la position de l'élément par rapport au haut de la page (document)
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                
+                // 2. Calculer la position de défilement finale :
+                // Position de l'élément - Hauteur de la navbar
+                const offsetTop = elementPosition - navbarHeight;
+
+                // 3. Défiler vers cette nouvelle position avec l'animation douce
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
                 });
             }
         }
     });
 });
-// FIN --- CODE DE DÉFILEMENT DOUX ---
+// FIN --- CODE DE DÉFILEMENT DOUX (MAINTENANT AVEC DÉCALAGE) ---
 
 
 // --- NAVBAR DYNAMIQUE : CHANGEMENT DE COULEUR DU TEXTE ---

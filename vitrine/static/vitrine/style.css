@@ -521,3 +521,14 @@ h3 { font-size: 1.5em; }
     color: var(--secondary-color);
     margin-right: 5px; /* Pour un petit espace entre l'icône et le texte */
 }
+
+/* --- Solution de Secours si scroll-margin-top échoue --- */
+
+/* Cette valeur ne décalera PAS la mise en page, elle ajuste UNIQUEMENT la destination du défilement */
+#cabinet, #services, #contact {
+    scroll-margin-top: 70px; /* Assurez-vous que cette valeur est bien présente et enregistrée */
+}
+
+html {
+    scroll-behavior: smooth;
+}
