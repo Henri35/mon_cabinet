@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     // Hauteur en pixels où la navbar doit changer (bas de la section hero)
     // Nous utilisons une valeur fixe car la navbar est fixe.
-    const heroHeight = 550; 
+    const heroHeight = 450; 
 
 
     function updateNavbarOnScroll() {
