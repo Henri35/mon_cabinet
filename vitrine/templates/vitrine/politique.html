@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique de Confidentialité et Mentions Légales - Dufour Expertise</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'vitrine/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* CSS spécifique à cette page pour centrer le contenu et ajouter de l'espace */
+        .legal-content {
+            padding: 80px 20px;
+            padding-top: 140px; /* Espace pour le navbar fixe */
+            min-height: 80vh;
+        }
+        .legal-content h2 {
+            text-align: left;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+        }
+        .legal-content p, .legal-content ul {
+            margin-bottom: 20px;
+        }
+        .legal-content ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="/" class="logo-link">
+                <img src="{% static 'vitrine/images/logo.png' %}" alt="Dufour Expertise Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/#cabinet">Le Cabinet</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section class="legal-content container">
+        <h1>Mentions Légales & Politique de Confidentialité</h1>
+        
+        <h2 id="editeur">Informations Légales de l'Éditeur</h2>
+        
+        <p><strong>Dénomination sociale :</strong> Dufour Expertise</p>
+        <p><strong>Forme Juridique :</strong> [À RENSEIGNER : Ex. SAS, SARL, EI, etc.]</p>
+        <p><strong>Représentant légal :</strong> Fabien Dufour, Expert-Comptable</p>
+        
+        <p><strong>Adresse du Siège Social :</strong> [À RENSEIGNER : Adresse Complète du Cabinet]</p>
+        <p><strong>Téléphone :</strong> 06 88 54 75 73</p>
+        <p><strong>E-mail de contact :</strong> fabien@dufour-expertise.com</p>
+        
+        <p><strong>Immatriculation :</strong> RCS [Ville] [À RENSEIGNER Numéro SIREN/SIRET]</p>
+        <p><strong>TVA Intracommunautaire :</strong> [À RENSEIGNER si applicable]</p>
+
+        <p><strong>Profession Réglementée :</strong> Le cabinet Dufour Expertise est une société d’Expertise comptable inscrite au Tableau de l’Ordre des Experts-Comptables de la Région [À RENSEIGNER : Ex. Paris Île-de-France].</p>
+
+        <h2 id="hebergement">Hébergement du Site</h2>
+        
+        <p>Le site Internet est hébergé par la société :</p>
+        <ul>
+            <li><strong>Dénomination :</strong> Linkweb</li>
+            <li><strong>Forme Juridique :</strong> SARL au capital de 7 000 Euros</li>
+            <li><strong>Siège social :</strong> 10, rue Albert Ferrasse 47550 Boé</li>
+            <li><strong>RCS :</strong> Agen B 509 580 585</li>
+            <li><strong>N° de téléphone :</strong> 05 33 95 00 30</li>
+        </ul>
+
+        <h2 id="propriete">Propriété Intellectuelle et Droit d'Auteur</h2>
+        
+        <p>L’ensemble de ce site, y compris les textes, graphismes, logos, images, ainsi que les éléments d'interface et de code, est la propriété de Dufour Expertise et est protégé par les lois en vigueur dans le domaine du Droit de la propriété intellectuelle et du droit d’auteur (Article L. 122-4 du Code de la propriété intellectuelle).</p>
+        <p>L’Utilisateur s’engage à ne pas reproduire, résumer, modifier, altérer ou rediffuser, sans autorisation préalable écrite de Dufour Expertise, quelque contenu que ce soit pour un usage autre que strictement privé. Toute reproduction à des fins professionnelles ou de diffusion en nombre est formellement interdite. La mise en place de liens hypertextes pointant vers ce site doit faire l’objet d’un accord préalable.</p>
+
+
+        <h2 id="rgpd">Politique de Confidentialité (RGPD)</h2>
+        
+        <h3>4.1. Collecte et Finalité des Données</h3>
+        <p>Les données personnelles collectées via le formulaire de contact ou de devis comprennent votre nom, prénom, adresse e-mail et numéro de téléphone.</p>
+        <p>Ces données sont utilisées uniquement pour les finalités suivantes :</p>
+        <ul>
+            <li>Répondre à vos demandes de contact ou de devis.</li>
+            <li>Gérer la relation client et les opérations administratives.</li>
+            <li>Assurer le suivi et l'amélioration de nos services.</li>
+        </ul>
+        
+        <h3>4.2. Droits de l'Utilisateur</h3>
+        <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants sur vos données : droit d'accès, droit de rectification, droit d'effacement, droit à la limitation du traitement, droit à la portabilité des données et droit d'opposition. </p>
+        <p>Pour exercer ces droits, veuillez contacter Fabien Dufour à l'adresse email : <strong>fabien@dufour-expertise.com</strong>.</p>
+        
+        <h3>4.3. Cookies et Traceurs</h3>
+        <p>Ce site utilise des cookies techniques nécessaires à son bon fonctionnement et des cookies de mesure d'audience (Google Analytics) soumis à votre consentement préalable. Les traceurs sont utilisés pour améliorer votre navigation et analyser notre trafic. Vous pouvez modifier ou retirer votre consentement à tout moment via la bannière de cookies présente sur le site.</p>
+
+    </section>
+
+    <footer style="background-color: var(--background-dark); color: #aaa; padding: 20px 0; text-align: center; font-size: 0.9em;">
+        <div class="container">
+            © 2025 Dufour Expertise. Tous droits réservés. | Mentions Légales
+        </div>
+    </footer>
+
+    <script src="{% static 'vitrine/script.js' %}"></script>
+    <script>
+        // Si vous utilisez une fonction JS pour gérer l'affichage de la nav-barre au scroll, elle doit être ici.
+    </script>
+</body>
+</html>
