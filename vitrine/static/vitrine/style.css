@@ -106,6 +106,9 @@ h3 { font-size: 1.5em; }
 /* Ajustement pour le logo lorsque la barre de navigation est compactée */
 .navbar.scrolled .logo-img {
     height: 60px; /* Réduit un peu le logo lorsque l'utilisateur a scrollé */
+    /* Filtre pour transformer la couleur vers le doré/secondary-color */
+    filter: brightness(0) invert(0.5) sepia(1) saturate(10) hue-rotate(345deg) brightness(1.5);
+    transition: all 0.3s ease, filter 0.3s ease;
 }
 
 /* S'assurer que les liens restent groupés à droite */
