@@ -526,7 +526,7 @@ h3 { font-size: 1.5em; }
 
 /* Cette valeur ne décalera PAS la mise en page, elle ajuste UNIQUEMENT la destination du défilement */
 #cabinet, #services, #contact {
-    scroll-margin-top: 270px; /* Assurez-vous que cette valeur est bien présente et enregistrée */
+    scroll-margin-top: 10px; /* Assurez-vous que cette valeur est bien présente et enregistrée */
 }
 
 html {
