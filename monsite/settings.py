@@ -127,4 +127,29 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# ==========================================================
+# CONFIGURATION EMAIL (SMTP) POUR FORMULAIRE DE CONTACT
+# ==========================================================
+import os # Ajouté pour lire les variables d'environnement (bonne pratique)
 
+# Serveur SMTP de Hostinger
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.hostinger.com' 
+EMAIL_PORT = 587
+
+# Utilisation de TLS/STARTTLS sur le port 587
+EMAIL_USE_TLS = True 
+EMAIL_USE_SSL = False 
+
+# Identifiants de votre compte Hostinger (À SÉCURISER !)
+# En local, vous pouvez laisser le mot de passe en clair pour le test initial.
+# EN PRODUCTION (Render), ces valeurs DOIVENT être lues via les variables d'environnement.
+EMAIL_HOST_USER = 'fabien@dufour-expertise.com'
+# Pour la production, utilisez une variable d'environnement (si elle est définie)
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '[VOTRE MOT DE PASSE DE BOÎTE E-MAIL ICI]') 
+
+# Adresse e-mail utilisée par défaut pour l'envoi de TOUS les messages du site
+DEFAULT_FROM_EMAIL = 'fabien@dufour-expertise.com' 
+SERVER_EMAIL = DEFAULT_FROM_EMAIL # Utilisé par Django pour les messages d'erreur
+
+# ==========================================================
