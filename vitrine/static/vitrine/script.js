@@ -2,21 +2,58 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Le site Dufour Expertise est prêt !");
 
     // ===============================================
-    // 1. NAVBAR DYNAMIQUE : CHANGEMENT DE COULEUR
+    // 1. NAVBAR DYNAMIQUE : CHANGEMENT DE COULEUR & TAILLE ADAPTATIVE
     // ===============================================
     const navbar = document.querySelector('.navbar');
-    // Hauteur en pixels où la navbar doit changer (bas de la section hero)
-    // Nous utilisons une valeur fixe car la navbar est fixe.
-    const heroHeight = 450; 
+
+    // Variables de déclenchement pour l'adaptation Mobile / Desktop
+    const desktopBreakpoint = 768;      // Largeur en px qui définit un grand écran
+    const triggerHeightDesktop = 550;   // Déclenchement pour Desktop (Plus bas)
+    const triggerHeightMobile = 450;    // Déclenchement pour Mobile (Plus haut / plus rapide)
+
+    // Logo (ajouté pour la gestion de la taille anti-grossissement)
+    const logoImg = document.getElementById('site-logo'); 
+    const sizeDesktopRest = '80px';     // Taille Desktop au repos (selon votre CSS)
+    const sizeMobileRest = '30px';      // Taille Mobile au repos (selon votre CSS)
 
 
     function updateNavbarOnScroll() {
-        if (navbar) {
-            // Si l'utilisateur a défilé au-delà de la zone Hero
-            if (window.scrollY >= heroHeight) {
+        if (navbar && logoImg) {
+            
+            // Détermine si nous sommes sur un grand écran (pour le déclenchement ET la taille du logo)
+            const isMobile = window.innerWidth <= desktopBreakpoint;
+            
+            // Sélectionne la hauteur de déclenchement appropriée
+            const currentTriggerHeight = isMobile ? triggerHeightMobile : triggerHeightDesktop;
+            
+            // --- LOGIQUE DE SCROLL (changement de couleur/classe) ---
+            if (window.scrollY >= currentTriggerHeight) {
+                
+                // ÉTAT SCROLLÉ (Fond Clair)
                 navbar.classList.add('scrolled');
+                
+                // FIX TAILLE MOBILE : Forcer la hauteur pour éviter le grossissement
+                if (isMobile) {
+                    // Le logo doit rester à la taille mobile de base (30px)
+                    logoImg.style.height = sizeMobileRest; 
+                } else {
+                    // Le logo sera compacté à 40px par le CSS (on laisse le CSS prendre le relais)
+                    logoImg.style.height = ''; 
+                }
+                
             } else {
+                
+                // ÉTAT AU REPOS (Fond Sombre)
                 navbar.classList.remove('scrolled');
+
+                // FIX TAILLE MOBILE : Remise à la taille initiale
+                if (isMobile) {
+                    // Taille de base mobile (30px)
+                    logoImg.style.height = sizeMobileRest; 
+                } else {
+                    // Taille large desktop (80px)
+                    logoImg.style.height = sizeDesktopRest; 
+                }
             }
         }
     }
