@@ -75,31 +75,50 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // --- LOGIQUE D'AFFICHAGE ET D'ÉCOUTE ---
+// --- LOGIQUE D'AFFICHAGE ET D'ÉCOUTE ---
     const userConsent = localStorage.getItem(consentKey);
 
-    if (cookieBanner && acceptBtn && declineBtn) {
+    if (cookieBanner && acceptBtn && declineBtn && settingsButton) {
+        
         if (userConsent === 'accept') {
             // Si déjà accepté, on active l'Analytics directement
             enableAnalytics();
+            // AFFICHAGE CORRIGÉ : Afficher le bouton flottant pour changer le consentement
+            settingsButton.style.display = 'block'; 
+
         } else if (userConsent === 'decline') {
             // Si refusé, on ne montre pas la bannière
             cookieBanner.style.display = 'none';
+            // AFFICHAGE CORRIGÉ : Afficher le bouton flottant pour changer le consentement
+            settingsButton.style.display = 'block'; 
+
         } else {
             // Si aucun choix n'est fait, on affiche la bannière
             cookieBanner.style.display = 'flex'; // Rendre visible (sans l'animation)
+            settingsButton.style.display = 'none'; // Masquer le bouton de gestion pendant que la bannière est ouverte
+            
             setTimeout(() => {
                 cookieBanner.classList.add('visible'); // Lance l'animation CSS
             }, 100); 
         }
 
-        // Événements des boutons
+        // Événements des boutons (restent corrects)
         acceptBtn.addEventListener('click', () => {
             handleConsent('accept');
         });
 
         declineBtn.addEventListener('click', () => {
             handleConsent('decline');
+        });
+        
+        // NOUVEAU : Gérer le clic sur le bouton flottant pour réafficher la bannière
+        settingsButton.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            settingsButton.style.display = 'none'; // Cacher le bouton flottant
+            cookieBanner.style.display = 'flex';
+            setTimeout(() => {
+                cookieBanner.classList.add('visible');
+            }, 100);
         });
     }
     // FIN --- BANNIÈRE COOKIES ---

@@ -105,7 +105,7 @@ h3 { font-size: 1.5em; }
 
 /* Ajustement pour le logo lorsque la barre de navigation est compactée */
 .navbar.scrolled .logo-img {
-    height: 60px; /* Réduit un peu le logo lorsque l'utilisateur a scrollé */
+    height: 100px; /* Réduit un peu le logo lorsque l'utilisateur a scrollé */
 }
 
 /* S'assurer que les liens restent groupés à droite */
