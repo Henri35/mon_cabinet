@@ -107,7 +107,7 @@ h3 { font-size: 1.5em; }
 .navbar.scrolled .logo-img {
     height: 80px; /* Réduit un peu le logo lorsque l'utilisateur a scrollé */
     /* Filtre pour transformer la couleur vers le doré/secondary-color */
-    filter: brightness(0) invert(0.5) sepia(1) saturate(10) hue-rotate(345deg) brightness(0.7);
+    filter: brightness(0) invert(0.5) sepia(1) saturate(5) hue-rotate(345deg) brightness(1.2);
     transition: all 0.3s ease, filter 0.3s ease;
 }
 
