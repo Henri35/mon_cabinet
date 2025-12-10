@@ -472,6 +472,37 @@ h3 { font-size: 1.5em; }
   background-color: #004a9c; /* bleu un peu plus clair au survol */
 }
 
+/* --- Bouton Flottant de Gestion des Cookies (Post-Consentement) --- */
+.cookie-settings-btn {
+    position: fixed;
+    bottom: 10px; /* Espace du bas */
+    right: 10px; /* Espace de la droite */
+    z-index: 1500; /* Assurez-vous qu'il est au-dessus du footer mais sous la bannière */
+    display: none; /* Masqué par défaut */
+    transition: opacity 0.3s ease;
+    
+    /* Styles du lien lui-même pour qu'il soit discret et lisible */
+    background-color: var(--background-dark); /* Fond bleu foncé */
+    border-radius: 5px;
+    padding: 8px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-settings-btn a {
+    color: white;
+    font-size: 0.85em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cookie-settings-btn a:hover {
+    color: var(--secondary-color); /* Couleur dorée au survol */
+}
+
+
+
+
+
 
 /* Classe JS ajoutée lorsque l'utilisateur a défilé */
 .navbar.scrolled {

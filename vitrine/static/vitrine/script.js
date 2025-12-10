@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Nous utilisons une valeur fixe car la navbar est fixe.
     const heroHeight = 550; 
 
+
     function updateNavbarOnScroll() {
         if (navbar) {
             // Si l'utilisateur a défilé au-delà de la zone Hero
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const declineBtn = document.getElementById('declineCookies');
     const analyticsScript = document.getElementById('analytics-script');
     const consentKey = 'cookiesChoice';
+    const settingsButton = document.getElementById('cookie-settings-btn');
 
     function enableAnalytics() {
         if (analyticsScript && analyticsScript.type === "text/plain") {
@@ -57,6 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
             cookieBanner.classList.remove('visible');
             // Optionnel : Retirer complètement le display: flex pour éviter les interférences
             setTimeout(() => cookieBanner.style.display = 'none', 400); 
+        }
+        // NOUVEAU : Afficher le bouton de gestion des cookies
+        if (settingsButton) {
+            settingsButton.style.display = 'block';
         }
         
         // 2. Mémoriser le choix dans le stockage local
