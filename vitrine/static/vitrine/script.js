@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cookieBanner) {
             cookieBanner.classList.remove('visible');
             // Optionnel : Retirer complètement le display: flex pour éviter les interférences
-            setTimeout(() => cookieBanner.style.display = 'none', 400); 
         }
         // NOUVEAU : Afficher le bouton de gestion des cookies
         if (settingsButton) {
