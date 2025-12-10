@@ -532,3 +532,21 @@ h3 { font-size: 1.5em; }
 html {
     scroll-behavior: smooth;
 }
+
+/* --- Styles pour le Pied de Page (Footer) --- */
+
+/* 1. Style de base du lien dans le footer */
+footer a {
+    /* Utilise une couleur grise pour le texte (comme dans le HTML) */
+    color: #aaa; 
+    /* Assure que la transition est active */
+    transition: color 0.3s ease; 
+    /* Retire le soulignement */
+    text-decoration: none; 
+}
+
+/* 2. Style au survol (Hover) */
+footer a:hover {
+    /* Applique la couleur secondaire (dorée) au survol */
+    color: var(--secondary-color); 
+}
