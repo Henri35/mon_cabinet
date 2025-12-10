@@ -122,6 +122,13 @@ h3 { font-size: 1.5em; }
     .logo-img {
         height: 30px;
     }
+    
+    /* CORRECTION : On force la hauteur à ne pas dépasser la taille au repos */
+    .navbar.scrolled .logo-img {
+        height: 30px; /* Le logo reste à 30px ou rétrécit légèrement (ex: 25px) */
+        /* Assurez-vous d'avoir le filtre doré ici aussi */
+        filter: invert(0.8) sepia(1) saturate(5) hue-rotate(350deg);
+    }
 }
 
 
