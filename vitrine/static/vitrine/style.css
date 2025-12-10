@@ -105,7 +105,7 @@ h3 { font-size: 1.5em; }
 
 /* Ajustement pour le logo lorsque la barre de navigation est compactée */
 .navbar.scrolled .logo-img {
-    height: 170px; /* Réduit un peu le logo lorsque l'utilisateur a scrollé */
+    height: 60px; /* Réduit un peu le logo lorsque l'utilisateur a scrollé */
 }
 
 /* S'assurer que les liens restent groupés à droite */
@@ -557,7 +557,7 @@ h3 { font-size: 1.5em; }
 
 /* Cette valeur ne décalera PAS la mise en page, elle ajuste UNIQUEMENT la destination du défilement */
 #cabinet, #services, #contact {
-    scroll-margin-top: 10px; /* Assurez-vous que cette valeur est bien présente et enregistrée */
+    scroll-margin-top: 100px; /* Assurez-vous que cette valeur est bien présente et enregistrée */
 }
 
 html {
