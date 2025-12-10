@@ -1,586 +1,1067 @@
 /* Variables et Reset de base */
+
 :root {
-    --primary-color: #004a8f; 
-    --secondary-color: #cba557; 
+
+    --primary-color: #004a8f;
+
+    --secondary-color: #cba557;
+
     --text-color: #333333;
+
     --background-light: #f5f7f8;
+
     --background-dark: #2c3e50;
+
     --font-primary: 'Montserrat', sans-serif;
+
     --font-secondary: 'Lato', sans-serif;
+
     --max-width: 1200px;
+
     --padding-section: 60px 20px;
+
 }
+
+
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
+
 
 body {
+
     font-family: var(--font-secondary);
+
     color: var(--text-color);
+
     line-height: 1.6;
+
     background-color: #ffffff;
+
 }
+
+
 
 a {
+
     text-decoration: none;
+
     color: var(--primary-color);
+
     transition: color 0.3s;
+
 }
+
 a:hover {
+
     color: var(--secondary-color);
+
 }
+
+
 
 .container {
+
     max-width: var(--max-width);
+
     margin: 0 auto;
+
     padding: 0 20px;
+
 }
+
+
 
 h1, h2, h3, h4 {
+
     font-family: var(--font-primary);
+
     color: var(--primary-color);
+
     line-height: 1.2;
+
     margin-bottom: 0.5em;
+
 }
+
+
 
 h1 { font-size: 2.8em; }
+
 h2 { font-size: 2em; text-align: center; }
+
 h3 { font-size: 1.5em; }
 
+
+
 /* --- NAVBAR TRANSPARENTE --- */
+
 .navbar {
+
     position: fixed;
+
     top: 0;
+
     width: 100%;
+
     z-index: 3000;
+
     padding: 20px 0;
+
     background: transparent;
+
 }
+
+
 
 .nav-container {
+
     display: flex;
+
     /* UTILISER space-between pour pousser le logo à gauche et les liens à droite */
-    justify-content: space-between; 
+
+    justify-content: space-between;
+
     align-items: center; /* Centre verticalement le logo et les liens */
+
 }
 
+
+
 .nav-links {
+
     list-style: none;
+
     display: flex;
+
     gap: 40px;
+
 }
+
+
 
 .nav-links a {
+
     font-family: var(--font-primary);
+
     font-weight: 700;
+
     color: white;
+
     text-transform: uppercase;
+
     letter-spacing: 1px;
+
     font-size: 0.95em;
+
     transition: color 0.3s ease;
+
 }
+
+
 
 .nav-links a:hover {
+
     color: var(--secondary-color);
+
 }
+
+
 
 /* --- Styles spécifiques pour le Logo Dufour Expertise --- */
+
 .logo-link {
-    /* Le logo est le premier élément, on peut utiliser auto pour les marges 
+
+    /* Le logo est le premier élément, on peut utiliser auto pour les marges
+
        si on veut le pousser, mais 'justify-content: space-between' s'en charge.
+
        On s'assure qu'il soit un bloc pour la mise en page. */
-    display: block; 
+
+    display: block;
+
     margin-right: 20px; /* Espace le logo des liens si nécessaire */
+
 }
+
+
 
 .logo-img {
+
     /* Définit une petite hauteur pour le logo */
+
     height: 120px; /* Taille standard pour un logo dans la nav-bar */
+
     width: auto; /* Maintient le ratio pour ne pas déformer l'image */
+
     transition: all 0.3s ease; /* Pour l'effet de compactage */
+
 }
+
+
 
 /* Ajustement pour le logo lorsque la barre de navigation est compactée */
+
 .navbar.scrolled .logo-img {
+
     height: 60px; /* Réduit un peu le logo lorsque l'utilisateur a scrollé */
-    /* Filtre pour transformer la couleur vers le doré/secondary-color */
-    filter: brightness(0) invert(0.5) sepia(1) saturate(10) hue-rotate(345deg) brightness(1);
-    transition: all 0.3s ease, filter 0.3s ease;
+
 }
+
+
 
 /* S'assurer que les liens restent groupés à droite */
+
 .nav-links {
+
     /* Le style par défaut est bon, mais on peut ajouter ceci pour plus de sûreté */
-    margin-left: auto; 
+
+    margin-left: auto;
+
 }
 
+
+
 /* Ajustement Mobile: Réduire un peu plus la taille du logo sur petit écran */
+
 @media (max-width: 768px) {
+
     .logo-img {
+
         height: 30px;
+
     }
+
 }
+
+
+
+
+
+
 
 
 
 
 
 /* Boutons (CTA) */
+
 .cta-button {
+
     display: inline-block;
+
     background-color: var(--secondary-color);
+
     color: white;
+
     padding: 12px 30px;
+
     border-radius: 5px;
+
     text-transform: uppercase;
+
     font-weight: 700;
+
     letter-spacing: 1px;
+
     transition: background-color 0.3s;
+
     border: 2px solid var(--secondary-color);
+
 }
+
 .cta-button:hover {
+
     background-color: #a58444;
+
     color: white;
+
 }
+
+
 
 /* --- Header / Section Héros --- */
+
 .hero-section {
+
     position: relative;
+
     height: 650px;
+
     overflow: hidden; /* nécessaire pour l'effet zoom */
+
 }
+
+
 
 /* Image de fond avec zoom animé */
+
 .hero-section::before {
+
     content: "";
+
     position: absolute;
+
     inset: 0;
 
-    background: 
+
+
+    background:
+
         linear-gradient(
+
             to bottom,
+
             rgba(0,0,0,0.55),
+
             rgba(0,0,0,0.60) 60%,
+
             rgba(203,165,87,0.20) 100%
+
         ),
+
         url('images/photo5.jpg')
+
         center center / cover no-repeat;
+
         /* === AJOUTER CETTE LIGNE POUR LE FLOU === */
+
     filter: blur(1px); /* Ajustez '2px' pour plus ou moins de flou */
 
+
+
     transform: scale(1);
+
     animation: bgZoom 18s ease-in-out forwards;
+
     z-index: 1;
+
 }
+
+
 
 /* Animation zoom */
+
 @keyframes bgZoom {
+
     0% { transform: scale(1); }
+
     100% { transform: scale(1.12); }
+
 }
+
+
 
 /* Contenu héro */
+
 .hero-content {
+
     position: relative;
+
     z-index: 2;
+
     text-align: center;
+
     color: white;
+
     top: 50%;
+
     transform: translateY(-50%);
+
     animation: fadeInHero 1.6s ease forwards;
+
     opacity: 0;
+
 }
+
+
 
 /* Animation fade-in */
+
 @keyframes fadeInHero {
+
     0% { opacity: 0; transform: translateY(-40px); }
+
     100% { opacity: 1; transform: translateY(-50%); }
+
 }
+
+
 
 .hero-content h3 {
+
     color: var(--secondary-color);
+
     font-weight: 400;
+
     font-size: 1.5em;
+
     margin-bottom: 40px;
+
 }
+
+
 
 .hero-content h1 {
+
     color: white;
+
     font-size: 4em;
+
     margin-bottom: 15px;
+
 }
+
+
 
 .hero-content h2 {
+
     color: #e6e6e6;
+
     font-size: 1.4em;
+
     margin-bottom: 40px;
+
 }
+
+
 
 /* --- Responsive Mobile --- */
+
 @media (max-width: 768px) {
 
+
+
     .hero-section {
+
         height: 480px;
+
     }
+
+
 
     .hero-content h1 {
+
         font-size: 2.7em;
+
     }
 
+
+
     .hero-content h2 {
+
         font-size: 1.2em;
+
     }
+
 }
+
+
 
 @media (max-width: 480px) {
 
+
+
     .hero-section {
+
         height: 420px;
+
     }
+
+
 
     .hero-content h1 {
+
         font-size: 2.2em;
+
     }
 
+
+
     .hero-content h2 {
+
         font-size: 1.1em;
+
     }
+
 }
+
+
+
 
 
 /* --- Section "Le Cabinet" --- */
+
 .section {
+
     padding: var(--padding-section);
+
 }
+
+
 
 .about-content {
+
     display: flex;
+
     gap: 40px;
+
     align-items: flex-start;
+
     margin-top: 40px;
+
 }
+
+
 
 .about-text {
+
     flex: 2;
+
     text-align: justify;
+
 }
+
+
 
 .about-text p {
+
     margin-bottom: 1.2em;
+
 }
+
+
 
 /* --- Blocs Chiffres Clés --- */
+
 .key-figures {
+
     flex: 1;
+
     background-color: var(--background-light);
+
     padding: 30px;
+
     border-radius: 8px;
+
     text-align: center;
+
 }
+
+
 
 .key-figure-item {
+
     margin-bottom: 20px;
+
     padding: 10px 0;
+
     border-bottom: 1px dashed #ccc;
+
 }
+
+
 
 .key-figure-item:last-child {
+
     border-bottom: none;
+
     margin-bottom: 0;
+
 }
+
+
 
 .key-figure-item strong {
+
     display: block;
+
     font-size: 2.2em;
+
     color: var(--secondary-color);
+
     font-family: var(--font-primary);
+
 }
+
+
 
 .key-figure-item span {
+
     font-size: 0.9em;
+
     color: var(--text-color);
+
 }
+
+
 
 /* --- Section Services --- */
+
 .services-section {
+
     background-color: var(--background-light);
+
     padding: var(--padding-section);
+
 }
+
+
 
 .services-grid {
+
     display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
     gap: 30px;
+
     margin-top: 40px;
+
 }
+
+
 
 .service-card {
+
     background: white;
+
     padding: 30px;
+
     border-radius: 8px;
+
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+
     transition: transform 0.3s, box-shadow 0.3s;
+
 }
+
+
 
 .service-card:hover {
+
     transform: translateY(-5px);
+
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+
 }
+
+
 
 .service-card h4 {
+
     color: var(--primary-color);
+
     border-bottom: 2px solid var(--secondary-color);
+
     padding-bottom: 10px;
+
     margin-bottom: 15px;
+
 }
+
+
 
 .service-card ul {
+
     list-style: none;
+
     padding-left: 0;
+
     font-size: 0.95em;
+
 }
+
+
 
 .service-card li {
+
     margin-bottom: 8px;
+
     padding-left: 1.2em;
+
     position: relative;
+
 }
+
+
 
 .service-card li::before {
+
     content: "✓";
+
     color: var(--secondary-color);
+
     position: absolute;
+
     left: 0;
+
     font-weight: bold;
+
 }
+
+
 
 /* --- Footer CTA --- */
+
 .contact-cta-section {
+
     background-color: var(--background-dark);
+
     color: white;
+
     text-align: center;
+
     padding: 80px 20px;
+
 }
+
+
 
 .contact-cta-section h2 {
+
     color: white;
+
     margin-bottom: 20px;
+
 }
 
+
+
 .contact-cta-section p {
+
     margin-bottom: 40px;
+
     font-size: 1.1em;
+
 }
+
+
+
+
 
 
 
 /* --- Responsive Design (Mobile) --- */
+
 @media (max-width: 768px) {
 
+
+
     .hero-section {
+
         height: 480px;
+
         padding: 100px 20px;
+
     }
+
+
 
     .hero-section h1 {
+
         font-size: 2.7em;
+
     }
+
+
 
     .about-content {
+
         flex-direction: column;
+
     }
+
+
 
     .nav-links {
+
         gap: 20px;
+
     }
+
+
 
     .nav-links a {
+
         font-size: 0.85em;
+
     }
+
+
 
     .about-text {
+
         order: 2;
+
     }
+
+
 
     .key-figures {
+
         order: 1;
+
         margin-bottom: 30px;
+
     }
+
 }
+
+
 
 /* Bannière cookies */
+
 .cookie-banner {
+
   /* 1. État initial : Cacher la bannière et la placer sous l'écran */
+
   opacity: 0;
+
   transform: translateY(100%);
+
   transition: opacity 0.4s ease, transform 0.4s ease;
-  /*display: none; /* Une seule fois, cachée par défaut */
-  
+
+  display: none; /* Une seule fois, cachée par défaut */
+
+ 
+
   /* 2. Position et Fond */
+
   position: fixed;
+
   bottom: 0;
+
   left: 0;
+
   width: 100%;
+
   background-color: #ffffffee; /* blanc légèrement transparent */
+
   color: #002b5c; /* bleu du thème */
+
   text-align: center;
+
   padding: 14px 20px;
+
   font-size: 0.95rem;
+
   z-index: 2000;
-  
+
+ 
+
   /* 3. Mise en page du contenu (sera activé par .visible) */
+
   justify-content: center;
+
   align-items: center;
+
   flex-wrap: wrap;
+
   gap: 12px;
+
   border-top: 2px solid #002b5c;
+
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.25);
+
 }
 
+
+
 .cookie-banner.visible {
+
   /* 4. État Visible : Active l'affichage */
+
   display: flex; /* REND la bannière visible */
+
   opacity: 1;
+
   transform: translateY(0);
+
 }
+
+
+
 
 
 /* Lien */
+
 .cookie-banner a {
+
   color: #007bff; /* bleu clair pour contraster */
+
   text-decoration: underline;
+
 }
+
+
 
 /* Boutons */
+
 .cookie-buttons {
+
   display: flex;
+
   gap: 10px;
+
 }
+
+
 
 .cookie-banner .btn.small {
+
   background-color: #002b5c; /* bleu foncé du site */
+
   color: #fff;
+
   border: none;
+
   font-weight: bold;
+
   padding: 6px 14px;
+
   border-radius: 5px;
+
   cursor: pointer;
+
   transition: background 0.3s ease;
+
 }
+
+
 
 .cookie-banner .btn.small:hover {
+
   background-color: #004a9c; /* bleu un peu plus clair au survol */
-}
 
-/* --- Bouton Flottant de Gestion des Cookies (Post-Consentement) --- */
-.cookie-settings-btn {
-    position: fixed;
-    bottom: 10px; /* Espace du bas */
-    right: 10px; /* Espace de la droite */
-    z-index: 1500; /* Assurez-vous qu'il est au-dessus du footer mais sous la bannière */
-    display: none; /* Masqué par défaut */
-    transition: opacity 0.3s ease;
-    
-    /* Styles du lien lui-même pour qu'il soit discret et lisible */
-    background-color: var(--background-dark); /* Fond bleu foncé */
-    border-radius: 5px;
-    padding: 8px 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-.cookie-settings-btn a {
-    color: white;
-    font-size: 0.85em;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.cookie-settings-btn a:hover {
-    color: var(--secondary-color); /* Couleur dorée au survol */
-}
-
 
 
 
 
 
 /* Classe JS ajoutée lorsque l'utilisateur a défilé */
+
 .navbar.scrolled {
+
     /* Rendre la barre légèrement visible pour plus d'élégance */
+
     background-color: rgba(255, 255, 255, 0.95);
+
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
     /* Réduire le padding pour un aspect plus compact */
+
     padding: 15px 0;
+
 }
+
+
 
 .navbar.scrolled .nav-links a {
+
     /* Changer la couleur du texte des liens pour qu'il soit lisible sur fond clair */
-    color: var(--secondary-color); 
+
+    color: var(--secondary-color);
+
 }
+
+
 
 /* Ajuster l'effet au survol */
+
 .navbar.scrolled .nav-links a:hover {
+
     color: var(--secondary-color);
+
 }
+
+
 
 /* --- Style pour la section Coordonnées de Contact (pour réduire l'espace) --- */
+
 .contact-cta-section .contact-details {
+
     /* Marge entre le texte d'introduction et le bouton CTA */
-    margin: 45px auto; 
-    
+
+    margin: 45px auto;
+
+   
+
     /* Centrer le bloc si nécessaire, ou utiliser flexbox/grid pour un alignement avancé */
-    display: block; 
+
+    display: block;
+
 }
+
+
 
 .contact-cta-section .contact-details .contact-item {
+
     /* Retire la marge par défaut des paragraphes */
-    margin-bottom: 20px; 
-    
+
+    margin-bottom: 20px;
+
+   
+
     /* Assure que la taille de police et le poids sont corrects (remplace les styles inline) */
+
     font-size: 1.1em;
+
     font-weight: 400; /* Plus léger pour ne pas surcharger */
+
 }
 
+
+
 /* Style spécifique pour le numéro de téléphone (légèrement plus grand) */
+
 .contact-cta-section .contact-details .contact-item:first-child {
+
     font-size: 1.25em;
+
     font-weight: bold;
+
     margin-bottom: 15px;
+
 }
+
 /* Dans style.css, pour colorer les icônes de contact en doré */
+
 .contact-details i {
+
     color: var(--secondary-color);
+
     margin-right: 5px; /* Pour un petit espace entre l'icône et le texte */
+
 }
+
+
 
 /* --- Solution de Secours si scroll-margin-top échoue --- */
 
+
+
 /* Cette valeur ne décalera PAS la mise en page, elle ajuste UNIQUEMENT la destination du défilement */
+
 #cabinet, #services, #contact {
-    scroll-margin-top: 170px; /* Assurez-vous que cette valeur est bien présente et enregistrée */
+
+    scroll-margin-top: 70px; /* Assurez-vous que cette valeur est bien présente et enregistrée */
+
 }
+
+
 
 html {
+
     scroll-behavior: smooth;
-}
 
-/* --- Styles pour le Pied de Page (Footer) --- */
-
-/* 1. Style de base du lien dans le footer */
-footer a {
-    /* Utilise une couleur grise pour le texte (comme dans le HTML) */
-    color: #aaa; 
-    /* Assure que la transition est active */
-    transition: color 0.3s ease; 
-    /* Retire le soulignement */
-    text-decoration: none; 
-}
-
-/* 2. Style au survol (Hover) */
-footer a:hover {
-    /* Applique la couleur secondaire (dorée) au survol */
-    color: var(--secondary-color); 
 }
