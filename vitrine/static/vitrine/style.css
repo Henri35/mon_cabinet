@@ -98,17 +98,15 @@ h3 { font-size: 1.5em; }
 
 .logo-img {
     /* Définit une petite hauteur pour le logo */
-    height: 120px; /* Taille standard pour un logo dans la nav-bar */
+    height: 140px; /* Taille standard pour un logo dans la nav-bar */
     width: auto; /* Maintient le ratio pour ne pas déformer l'image */
     transition: all 0.3s ease; /* Pour l'effet de compactage */
 }
 
 /* Ajustement pour le logo lorsque la barre de navigation est compactée */
 .navbar.scrolled .logo-img {
-    height: 80px; /* Réduit un peu le logo lorsque l'utilisateur a scrollé */
-    /* Filtre pour transformer la couleur vers le doré/secondary-color */
-    filter: brightness(0) invert(0.5) sepia(1) saturate(5) hue-rotate(345deg) brightness(1.2);
-    transition: all 0.3s ease, filter 0.3s ease;
+    height: 80px; /* Réduit un peu le logo lorsque l'utilisateur a scrollé*/
+    transition: all 0.3s ease;
 }
 
 /* S'assurer que les liens restent groupés à droite */
@@ -120,14 +118,13 @@ h3 { font-size: 1.5em; }
 /* Ajustement Mobile: Réduire un peu plus la taille du logo sur petit écran */
 @media (max-width: 768px) {
     .logo-img {
-        height: 30px;
+        height: 50px;
     }
     
     /* CORRECTION : On force la hauteur à ne pas dépasser la taille au repos */
     .navbar.scrolled .logo-img {
-        height: 30px; /* Le logo reste à 30px ou rétrécit légèrement (ex: 25px) */
-        /* Assurez-vous d'avoir le filtre doré ici aussi */
-        filter: invert(0.8) sepia(1) saturate(5) hue-rotate(350deg);
+        height: 50px; /* Le logo reste à 30px ou rétrécit légèrement (ex: 25px) */
+
     }
 }
 
@@ -510,10 +507,6 @@ h3 { font-size: 1.5em; }
 }
 
 
-
-
-
-
 /* Classe JS ajoutée lorsque l'utilisateur a défilé */
 .navbar.scrolled {
     /* Rendre la barre légèrement visible pour plus d'élégance */
@@ -525,7 +518,7 @@ h3 { font-size: 1.5em; }
 
 .navbar.scrolled .nav-links a {
     /* Changer la couleur du texte des liens pour qu'il soit lisible sur fond clair */
-    color: var(--secondary-color); 
+    color: var(--primary-color); 
 }
 
 /* Ajuster l'effet au survol */
@@ -567,7 +560,7 @@ h3 { font-size: 1.5em; }
 
 /* Cette valeur ne décalera PAS la mise en page, elle ajuste UNIQUEMENT la destination du défilement */
 #cabinet, #services, #contact {
-    scroll-margin-top: 170px; /* Assurez-vous que cette valeur est bien présente et enregistrée */
+    scroll-margin-top: 165px; /* Assurez-vous que cette valeur est bien présente et enregistrée */
 }
 
 html {

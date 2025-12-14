@@ -11,8 +11,8 @@
 
     <link rel="canonical" href="https://dufour-expertise.com/">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'vitrine/images/logo.png' %}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'vitrine/images/logo.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'vitrine/images/logo3.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'vitrine/images/logo3.png' %}">
     <link rel="apple-touch-icon" href="{% static 'vitrine/images/logo9.png' %}">
 
     <meta property="og:title" content="Cabinet Dufour Expertise – Expert-Comptable à Bobigny">
@@ -38,7 +38,14 @@
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo-link">
-                <img src="{% static 'vitrine/images/logo.png' %}" alt="Dufour Expertise Logo" class="logo-img">
+            <img
+            id="site-logo"
+            class="logo-img"
+            src="{% static 'vitrine/images/logo3.png' %}"
+            data-logo-default="{% static 'vitrine/images/logo3.png' %}"
+            data-logo-scrolled="{% static 'vitrine/images/logo3bis.png' %}"
+            alt="Dufour Expertise Logo"
+            >
             </a>
             <ul class="nav-links">
                 <li><a href="#cabinet">Le Cabinet</a></li>
